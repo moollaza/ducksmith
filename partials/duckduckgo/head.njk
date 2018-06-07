@@ -1,6 +1,7 @@
-{% extends "./partials/duckduckgo/meta/base.njk" %}
-{%if hasMeta %}
-	{% extends metaFile %}
-{% else %}
-	<title>DuckDuckGo</title>
-{% endif %}
+{% include "./partials/duckduckgo/meta/base.njk" %}
+
+{% block pageMeta %}{% endblock %}
+
+{% block title %}
+<title>{{ default(pageTitle, 'DuckDuckGo') }}</title>
+{% endblock %}

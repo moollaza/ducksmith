@@ -9,36 +9,7 @@
     <!--<![endif]-->
 
     <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1"/>
-        <meta name="HandheldFriendly" content="true"/>
-
-        <link rel="canonical" href="https://duckduckgo.com/about">
-
-        <link rel="stylesheet" href="{{ server }}/s1617.css" type="text/css">
-        <link rel="stylesheet" href="{{ server }}/t1617.css" type="text/css">
-
-        <link rel="shortcut icon" href="{{ server }}/favicon.ico" type="image/x-icon" sizes="16x16 24x24 32x32 64x64"/>
-        <link rel="apple-touch-icon" href="{{ server }}/assets/icons/meta/DDG-iOS-icon_60x60.png"/>
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ server }}/assets/icons/meta/DDG-iOS-icon_76x76.png"/>
-        <link rel="apple-touch-icon" sizes="120x120" href="{{ server }}/assets/icons/meta/DDG-iOS-icon_120x120.png"/>
-        <link rel="apple-touch-icon" sizes="152x152" href="{{ server }}/assets/icons/meta/DDG-iOS-icon_152x152.png"/>
-        <link rel="image_src" href="{{ server }}/assets/icons/meta/DDG-icon_256x256.png"/>
-        <link rel="manifest" href="{{ server }}/manifest.json"/>
-
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" value="@duckduckgo">
-
-        <meta property="og:url" content="https://duckduckgo.com/about"/>
-        <meta property="og:site_name" content="DuckDuckGo"/>
-        <meta property="og:image" content="https://duckduckgo.com/assets/logo_social-media.png">
-
-        <title>About DuckDuckGo</title>
-        <meta property="og:title" content="About DuckDuckGo"/>
-
-        <meta property="og:description" content="We're setting the new standard of trust online, empowering people to take control of their personal information.">
-        <meta name="description" content="We're setting the new standard of trust online, empowering people to take control of their personal information.">
+        {% include "./partials/duckduckgo/head.njk" %}
 
         <!-- mapbox -->
         <script src="{{ server }}/js/mapbox/mapbox-2.2.3.js"></script>

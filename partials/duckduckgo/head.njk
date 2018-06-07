@@ -1,0 +1,6 @@
+{% extends "./partials/duckduckgo/meta/base.njk" %}
+{%if hasMeta %}
+	{% extends metaFile %}
+{% else %}
+	<title>DuckDuckGo</title>
+{% endif %}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]> <html lang="{{ locale }}" class="no-js iem7"> <![endif]-->
+<!--[if lt IE 7]> <html class="ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7 no-js" lang="{{ locale }}"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 lt-ie10 lt-ie9 lt-ie8 no-js" lang="{{ locale }}"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 lt-ie10 lt-ie9 no-js" lang="{{ locale }}"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9 lt-ie10 no-js" lang="{{ locale }}"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="{{ locale }}"><!--<![endif]-->
+
+<head>
+	{% include "./partials/duckduckgo/head.njk.njk" ignore missing %}
+</head>
+<body id="pg-{{ filebase }}" class="page-{{ filebase }}{% if homepage %} body--home{% endif %} {{ page_class }}">
+	{% if not no_js %}
+		{% include "./partials/duckduckgo/head_js.njk" ignore missing %}
+	{% endif %}
+	<div class="site-wrapper {% if homepage %} site-wrapper--home{% else %} site-wrapper--static{% endif %} js-site-wrapper">
+	{% if not no_wrapper %}
+		{% if not no_header %}
+			{% include "./partials/duckduckgo/header.njk" ignore missing %}
+		{%endif%}
+		<div id="content_wrapper" class="content-wrap">
+		{% if not no_content_internal %}
+			<div id="content" class="content{% if not no_cw %} cw{% endif %}">
+				<div id="content_internal" class="content__internal">
+		{% endif %}
+	{% else %}
+		{% if homepage %}
+			{% include "./partials/duckduckgo/header_homepage.njk" ignore missing %}
+			<div class="content-wrap--home">
+				<div id="content_homepage" class="content--home">
+					<div class="cw--c">
+						{% include "./partials/duckduckgo/_logo_homepage.njk" ignore missing %}
+						<div class="search-wrap--home">
+							{% include "./partials/duckduckgo/search_form_homepage.njk" ignore missing %}
+						</div>
+		{% endif %}
+	{%endif%}
+
+	{% block content %}{% endblock %}
+
+	{% if no_wrapper %}
+		{% if homepage %}
+					</div> <!-- cw -->
+				</div> <!-- content_homepage -->
+			</div> <!-- content_wrap_homepage -->
+			{% include "./partials/duckduckgo/footer_homepage.njk" ignore missing %}
+		{% endif %}
+	{% else %}
+		{% if not no_spacer %}<div id="bottom_spacing2"></div>{% endif %}
+		{% if not no_content_internal %}
+				</div> <!-- content_internal //-->
+			</div> <!-- content //-->
+		{% endif %}
+		{% if software_footer %}
+			{% include "./partials/duckduckgo/footer_software.njk" ignore missing %}
+		{% endif %}
+		{% if nav_footer %}
+			{% include "./partials/duckduckgo/footer_nav.njk" ignore missing %}
+		{% endif %}
+		{% if about_footer %}
+			{% include "./partials/duckduckgo/footer_about.njk" ignore missing %}
+		{% endif %}
+		{% if copyright_footer %}
+			{% include "./partials/duckduckgo/footer_copyright.njk" ignore missing %}
+		{% endif %}
+		</div> <!-- content_wrapper //-->
+	{% endif %}
+	</div> <!-- site-wrapper -->
+</body>
+</html>

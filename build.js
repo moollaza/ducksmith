@@ -1,3 +1,4 @@
+require('dotenv').config()
 const glob = require('glob')
 const Metalsmith = require('metalsmith')
 const env = require('metalsmith-env');

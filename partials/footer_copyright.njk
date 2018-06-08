@@ -1,0 +1,11 @@
+<div class="blk  blk--foot{{ "blk--foot--alt" if copyright_footer > 1 }}">
+	<div class="cw--c">
+			<p>&copy; <a href="https://duckduckgo.com">DuckDuckGo</a>.&nbsp;
+				{% if copyright_text %}
+					{{ l(copyright_text) | safe}}
+				{% else %}
+					{{ l("The search engine that doesn't track you.") | safe }}
+				{% endif %}
+			</p>
+	</div>
+</div>

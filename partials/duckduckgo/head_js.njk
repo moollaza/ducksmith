@@ -1,1 +1,28 @@
-head_js
+<script type="text/javascript">
+var settings_js_version = "{{ DDG_DYNAMIC_SETTINGS_JS_FILE or '/set.js' }}",
+    locale = "{{locale}}";
+</script>
+<script type="text/javascript" src="{{server}}/locales/{{ locale}}/LC_MESSAGES/{{ locale_domain }}+sprintf+gettext+locale-simple.{{ locale_package_version }}.js"></script>
+<script type="text/javascript" src="{{ DDG_LIBS_JS_FILE }}"></script>
+<script type="text/javascript" src="{{ DDG_UTILS_JS_FILE }}"></script>
+<script type="text/javascript" src="{{ DDG_DYNAMIC_JS_FILE }}"></script>
+
+{% if includeSerpJS %}
+<script type="text/javascript" src="{{ DDG_DYNAMIC_JS_2_FILE }}"></script>
+{% endif %}
+
+{% if not isHomepage %}
+<script type="text/javascript" src="{{ DDG_DYNAMIC_STATIC_JS_FILE }}"></script>
+{% endif %}
+
+{% if not jsSkipInit %}
+<script type="text/javascript">
+    DDG.page = new DDG.Pages.{% if jsPageType %}{{ jsPageType }}{% elif isHomepage %}Home{% else %}Static{% endif %}();
+</script>
+{% endif %}
+
+{% if jsBangVersion %}
+<script type="text/javascript">
+    DDG.inject("DDG.Data.bangs.version", {{ DDG_MAX_BANG_JS or 0 }});
+</script>
+{% endif %}

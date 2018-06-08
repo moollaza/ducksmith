@@ -1,7 +1,8 @@
-{% include "./partials/duckduckgo/meta/base.njk" %}
-
-{% block pageMeta %}{% endblock %}
+{% include "partials/duckduckgo/meta/base.njk" %}
 
 {% block title %}
-<title>{{ default(pageTitle, 'DuckDuckGo') }}</title>
+<title>{{ pageTitle or 'DuckDuckGo' }}</title>
+<meta property="og:title" content="{{ pageTitle or 'DuckDuckGo' }}" />
 {% endblock %}
+
+{% block pageHead %}{% endblock %}

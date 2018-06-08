@@ -3,12 +3,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
 <meta name="HandheldFriendly" content="true"/>
 
-<link rel="canonical" href="https://duckduckgo.com{{ pageFields.slug  }}">
+<link rel="canonical" href="https://duckduckgo.com/{{ pageFields.slug  }}">
 
 <link rel="stylesheet" href="{{ DDG_DYNAMIC_CSS_FILE }}" type="text/css">
 <link rel="stylesheet" href="{{ DDG_DYNAMIC_CSS_2_FILE }}" type="text/css">
+
 {% if includeSerpCSS %}
-    <link rel="stylesheet" href="{{ DDG_DYNAMIC_CSS_3_FILE }}" type="text/css">
+<link rel="stylesheet" href="{{ DDG_DYNAMIC_CSS_3_FILE }}" type="text/css">
 {% endif %}
 
 <link rel="shortcut icon" href="{{ server }}/favicon.ico" type="image/x-icon" sizes="16x16 24x24 32x32 64x64"/>
@@ -22,6 +23,6 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" value="@duckduckgo">
 
-<meta property="og:url" content="https://duckduckgo.com{{ pageFields.slug }}" />
+<meta property="og:url" content="https://duckduckgo.com/{{ pageFields.slug }}" />
 <meta property="og:site_name" content="DuckDuckGo" />
 <meta property="og:image" content="https://duckduckgo.com/assets/logo_social-media.png">

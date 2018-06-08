@@ -20,7 +20,14 @@ Metalsmith(__dirname)
     variables: {
       DDG_DYNAMIC_CSS_FILE: '/style.css',
       DDG_DYNAMIC_CSS_2_FILE: '/static.css',
-      DDG_DYNAMIC_CSS_3_FILE: '/serp.css'
+      DDG_DYNAMIC_CSS_3_FILE: '/serp.css',
+
+      DDG_DYNAMIC_SETTINGS_JS_FILE:  '/set.js',
+      DDG_LIBS_JS_FILE: '/libs.js',
+      DDG_UTILS_JS_FILE: '/utils.js',
+      DDG_DYNAMIC_JS_FILE: '/base.js',
+      DDG_DYNAMIC_JS_2_FILE: '/serp.js',
+      DDG_DYNAMIC_STATIC_JS_FILE: '/static.js'
     }
   }))
   .use(contentful({

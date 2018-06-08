@@ -12,13 +12,28 @@ contentful:
   include: 5
 ---
 
-{% extends "./layouts/duckduckgo/static.njk" %}
+{# Get and convert locale from en-US to en_US #}
+{% set locale = data.entries[0].sys.locale | replace('-', '_') %}
 
+{# Setup Vars #}
+{% set model = data.entries[0] %}
+{% set fields = model.fields %}
+{% set factCards = fields.sections[0].fields.factCards %}
+
+{% extends "layouts/duckduckgo/base.njk" %}
+
+{% block pageHead %}
+<meta property="og:description" content="We're setting the new standard of trust online, empowering people to take control of their personal information.">
+<meta name="description" content="We're setting the new standard of trust online, empowering people to take control of their personal information.">
+
+<!-- mapbox -->
+<script src="{{ server }}/js/mapbox/mapbox-2.2.3.js"></script>
+<script src="{{ server }}/js/mapbox/leaflet.markercluster-0.4.0.js"></script>
+<link href="{{ server }}/js/mapbox/mapbox-2.2.3.css" rel="stylesheet"/>
+{% endblock %}
+
+{# Main Content #}
 {% block content %}
-
-    {% set pageFields = data.entries[0].fields %}
-    {% set factCards = pageFields.sections[0].fields.factCards %}
-
     <!-- Hero -->
     <div class="abt  abt--hero  blk  blk--hero">
         <div class="cw--c">
